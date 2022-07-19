@@ -1,0 +1,29 @@
+method: unflow
+data:
+  test_split: test #test_new_individual
+  n_intervals: 1
+  input_pointcloud_n: 300 ## 50, 100, 300, 500, 1000 points
+model:
+  encoder: 
+  encoder_kwargs:
+    hidden_dim: 128
+  encoder_temporal: pointnet_spatiotemporal
+  encoder_temporal_kwargs:
+    hidden_dim: 128
+  decoder: simple_local
+  decoder_kwargs:
+    hidden_size: 128
+  velocity_field: concat
+  velocity_field_kwargs:
+    hidden_size: 128
+  c_dim: 128
+  loss_corr: true
+  loss_corr_bw: true
+  loss_transform_forward: true
+  loss_corr_bw_only: false
+  loss_recon: true
+  lamda: 0.1 # 0.5, 1.0
+training:
+  out_dir:  out/pointcloud/unflow_pretrained
+test:
+  model_file: out/pointcloud/unflow/model_best.pt
