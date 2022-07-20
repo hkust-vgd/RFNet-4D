@@ -93,7 +93,6 @@ class Generator3D(Generator3DONet):
         if self.onet_generator.model.decoder is not None:
             if len(c_s.size()) == 3:
                 c_s = c_s[:, 0, :]
-                # c_t = c_t[:, 0, :]
             mesh = self.onet_generator.generate_from_latent(
                 z, c_s, c_t, stats_dict=stats_dict)
         else:
@@ -132,7 +131,6 @@ class Generator3D(Generator3DONet):
         device = self.onet_generator.device
         time_val = self.get_time_steps()
         meshes = []
-        # print(vertices_0.shape, c_t.shape, time_val)
         vertices_0 = torch.from_numpy(
             vertices_0).to(device).unsqueeze(0).float()
         t0 = time.time()
@@ -146,27 +144,9 @@ class Generator3D(Generator3DONet):
         v_t_batch = v_t_batch.cpu().numpy()
 
         stats_dict['time (forward propagation)'] = time.time() - t0
-        
-
-        # import pyvista as pv
-        # import matplotlib.pyplot as plt
-        # # color_cmap = plt.cm.get_cmap("jet")
-        # plotter = pv.Plotter()
-        # plotter.add_mesh(trimesh.Trimesh(vertices=vertices_0.squeeze(0).cpu(), faces=faces, process=False))
-        # plotter.show()
-
 
         for v_t in v_t_batch:
             mesh = trimesh.Trimesh(vertices=v_t, faces=faces, process=False)
-            
-            # print(vertices_0.shape, v_t.shape)
-            # # import pyvista as pv
-            # # import matplotlib.pyplot as plt
-            # # color_cmap = plt.cm.get_cmap("jet")
-            # plotter = pv.Plotter()
-            # plotter.add_mesh(mesh)
-            # plotter.show()
-
             meshes.append(mesh)
         return meshes
 
@@ -255,13 +235,8 @@ class Generator3D(Generator3DONet):
 
                 # Generate and save first mesh
                 mesh_t0 = self.generate_mesh_t0(z, c_s, c_t, data, stats_dict=stats_dict)
-                # import pyvista as pv
-                # import matplotlib.pyplot as plt
-                # color_cmap = plt.cm.get_cmap("jet")
-                # plotter = pv.Plotter()
-                # plotter.add_mesh(mesh_t0)
-                # plotter.show()
                 meshes.append(mesh_t0)
+
                 # Generate and save later time steps
                 meshes_t = self.generate_meshes_t(
                     mesh_t0.vertices, mesh_t0.faces, z=z, c_s=c_s, c_t=c_t,
@@ -334,11 +309,9 @@ class Generator3D(Generator3DONet):
 
     ##### motion transfer
     def generate_motion_transfer(self, model_0, model_1, motion_model_path, motion_pointcloud_path, shape_file_path):
-        #latent_space_file_path
         self.onet_generator.model.eval()
         device = self.onet_generator.device
         vertex_data = None
-        #df = pd.read_pickle(latent_space_file_path)
 
         #Load Motion
         _, _, motion_mesh_vertices = load_and_scale_mesh_sequence(motion_model_path, model_0['start_idx'], seq_len=17)
