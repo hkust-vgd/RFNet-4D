@@ -72,7 +72,7 @@ class CheckpointIO(object):
             scalars = self.parse_state_dict(state_dict)
             return scalars
         else:
-            if self.initialize_from is None:
+            if self.initialize_from is not None:
                 self.initialize_weights()
             else:
                 raise FileExistsError
