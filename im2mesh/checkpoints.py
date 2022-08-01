@@ -74,7 +74,8 @@ class CheckpointIO(object):
         else:
             if self.initialize_from is not None:
                 self.initialize_weights()
-            raise FileExistsError
+            else:
+                raise FileExistsError
 
     def load_url(self, url):
         '''Load a module dictionary from url.
