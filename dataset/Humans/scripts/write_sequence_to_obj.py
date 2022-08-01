@@ -53,8 +53,8 @@ if __name__ == '__main__':
                   (args.seq, args.sid, args.path))
             f.close()
             sys.exit(1)
-        verts = f[sidseq].value.transpose([2, 0, 1])
-        faces = f['faces'].value
+        verts = f[(sidseq)].transpose([2, 0, 1])
+        faces = f[('faces')]
 
     tdir = join(args.tdir, sidseq)
     if not exists(tdir):
