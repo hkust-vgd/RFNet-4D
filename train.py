@@ -72,7 +72,6 @@ batch_size = cfg['training']['batch_size']
 batch_size_vis = cfg['training']['batch_size_vis']
 batch_size_val = cfg['training']['batch_size_val']
 backup_every = cfg['training']['backup_every']
-# exit_after = args.exit_after
 lr = cfg['training']['learning_rate']
 
 model_selection_metric = cfg['training']['model_selection_metric']
