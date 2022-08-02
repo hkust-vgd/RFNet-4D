@@ -130,9 +130,9 @@ for it, data_batch in enumerate(tqdm(test_loader)):
 
     if cfg['test']['eval_mesh']:
         mesh_folder = os.path.join(mesh_dir, modelname, '%05d' % start_idx)
+        print(mesh_folder)
         if os.path.exists(mesh_folder):
-            off_files = glob.glob(os.path.join(mesh_folder, '*.obj'))
-            print(mesh_folder)
+            off_files = glob.glob(os.path.join(mesh_folder, '*.off'))
             off_files.sort()
 
             if cfg['test']['eval_only_end_time_steps']:
