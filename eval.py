@@ -132,6 +132,7 @@ for it, data_batch in enumerate(tqdm(test_loader)):
         mesh_folder = os.path.join(mesh_dir, modelname, '%05d' % start_idx)
         if os.path.exists(mesh_folder):
             off_files = glob.glob(os.path.join(mesh_folder, '*.obj'))
+            print(mesh_folder)
             off_files.sort()
 
             if cfg['test']['eval_only_end_time_steps']:
