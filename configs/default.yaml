@@ -1,6 +1,6 @@
 method: unflow
 data:
-  path: /home/anh/disk1/4d_reconstruction/RFNet-4D/dataset/Humans
+  path: ./dataset/Humans
   dataset: Humans
   input_type: pcl_seq
   classes: ['D-FAUST']
