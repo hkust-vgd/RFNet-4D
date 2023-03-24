@@ -1,9 +1,11 @@
 # RFNet-4D: Joint Object Reconstruction and Flow Estimation from 4D Point Clouds
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/rfnet-4d-joint-object-reconstruction-and-flow/3d-human-reconstruction-on-dynamic-faust)](https://paperswithcode.com/sota/3d-human-reconstruction-on-dynamic-faust?p=rfnet-4d-joint-object-reconstruction-and-flow)
+
 This is an implementation of RFNet-4D, a new network architecture that jointly reconstructs objects and their motion flows from 4D point clouds: 
 
 **RFNet-4D: Joint Object Reconstruction and Flow Estimation from 4D Point Clouds** <br />
-[Tuan-Anh Vu](https://tavu.student.ust.hk), [Duc-Thanh Nguyen](https://ducthanhnguyen.weebly.com/), [Binh-Son Hua](https://sonhua.github.io/), [Quang-Hieu Pham](https://pqhieu.github.io/), [Sai-Kit Yeung](http://saikit.org/)
+[Tuan-Anh Vu](https://tuananh1007.github.io), [Duc-Thanh Nguyen](https://ducthanhnguyen.weebly.com/), [Binh-Son Hua](https://sonhua.github.io/), [Quang-Hieu Pham](https://pqhieu.github.io/), [Sai-Kit Yeung](http://saikit.org/)
 
 For more details, please check [[Paper Arxiv]](https://arxiv.org/abs/2203.16482), and [[Project webpage]](https://tuananh1007.github.io/RFNet-4D/).
 
