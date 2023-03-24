@@ -7,7 +7,7 @@ This is an implementation of RFNet-4D, a new network architecture that jointly r
 **RFNet-4D: Joint Object Reconstruction and Flow Estimation from 4D Point Clouds** <br />
 [Tuan-Anh Vu](https://tuananh1007.github.io), [Duc-Thanh Nguyen](https://ducthanhnguyen.weebly.com/), [Binh-Son Hua](https://sonhua.github.io/), [Quang-Hieu Pham](https://pqhieu.github.io/), [Sai-Kit Yeung](http://saikit.org/)
 
-For more details, please check [[Paper Arxiv]](https://arxiv.org/abs/2203.16482), and [[Project webpage]](https://tuananh1007.github.io/RFNet-4D/).
+For more details, please check [[Paper]](https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136830036.pdf), [[Arxiv version]](https://arxiv.org/abs/2203.16482), and [[Project webpage]](https://tuananh1007.github.io/RFNet-4D/).
 
 If you have any question, please contact Tuan-Anh Vu <tavu@connect.ust.hk>.
 
